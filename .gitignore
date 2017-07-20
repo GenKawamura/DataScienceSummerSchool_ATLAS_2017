@@ -1,0 +1,4 @@
+make-slides.sh
+slides/*.pdf
+slides/.~lock*
+
