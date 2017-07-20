@@ -1,4 +1,5 @@
 make-slides.sh
 slides/*.pdf
 slides/.~lock*
+pyroot/valid2*
 

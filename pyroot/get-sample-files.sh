@@ -3,10 +3,10 @@
 dataset=valid2.117050.PowhegPythia_P2011C_ttbar.digit.AOD.e2657_s1933_s1964_r5534
 num_files=1
 protocol=gsiftp
+rucio_account=gkawamur
 
 usage="$0 [options]
 
- -d:  dataset [default: $dataset]
  -n:  number of files [default: $num_files]
  
 "
@@ -20,11 +20,9 @@ fi
 #--------------------------
 # Getopt
 #--------------------------
-while getopts "d:n:hv" op
+while getopts "n:hv" op
   do
   case $op in
-      d) dataset=$OPTARG
-	  ;;
       n) num_files=$OPTARG
           ;;
       h) echo "$usage"
@@ -46,6 +44,7 @@ setupATLAS(){
     source $ATLAS_LOCAL_ROOT_BASE/user/atlasLocalSetup.sh ""
 }
 setupATLAS
+export RUCIO_ACCOUNT=$rucio_account
 lsetup rucio
 
 ## Selecting a file
